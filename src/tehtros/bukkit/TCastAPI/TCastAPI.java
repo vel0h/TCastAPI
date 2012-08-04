@@ -15,7 +15,7 @@ import tehtros.bukkit.Exceptions.*;
 
 /**
  * 
- * * Le TCast API plugin
+ * Finally, a TCast API! Documentation soon to come.
  * 
  * @author tehtros
  * 

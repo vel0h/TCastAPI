@@ -1,1 +1,1 @@
-Finally, a TCast API! Documentatino soon to come.
+Finally, a TCast API! Documentation soon to come.
