@@ -23,13 +23,13 @@ import tehtros.bukkit.Exceptions.*;
 public class TCastAPI extends JavaPlugin {
 	public static final Logger log = Logger.getLogger("Minecraft");
 	public final Plugin plugin;
-	
+
 	private String name;
 	private String chatcolor;
 
 	private FileConfiguration config = null;
 	private File configFile = null;
-	
+
 	public TCastAPI(final Plugin plugin) {
 		this.plugin = plugin;
 		tcastreload();
@@ -37,12 +37,12 @@ public class TCastAPI extends JavaPlugin {
 
 	private String config(String input) {
 		// Check for config. + Other crap.
-		try {
-			if(configFile == null) {
+		if(configFile == null) {
+			try {
 				configFile = new File(new File("plugins", "TCastAPI"), "TCastAPI.yml");
+			} catch(Exception e) {
+
 			}
-		} catch(Exception e) {
-			
 		}
 		config = YamlConfiguration.loadConfiguration(configFile);
 
@@ -106,7 +106,7 @@ public class TCastAPI extends JavaPlugin {
 	 * 
 	 * @param newname
 	 * @return true if the name was successfully changed.
-	 * @throws NoNameSupplied 
+	 * @throws NoNameSupplied
 	 */
 	public boolean tcastname(String newname) throws NoNameSupplied {
 		if(!newname.isEmpty()) {
@@ -162,11 +162,11 @@ public class TCastAPI extends JavaPlugin {
 	public String getTCastName() {
 		return name;
 	}
-	
+
 	public String getChatColor() {
 		return chatcolor;
 	}
-	
+
 	public String colors(String color) {
 		return color.replaceAll("&(?=[0-9a-fA-FkKmMoOlLnNrR])", "\u00a7");
 	}
